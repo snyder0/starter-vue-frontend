@@ -1,4 +1,4 @@
-import Axios from "../../services/axios"
+import Axios from "./axios"
 
 const resource = "/value"
 export default class valueService {

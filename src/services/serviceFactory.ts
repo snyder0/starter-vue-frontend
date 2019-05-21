@@ -1,7 +1,7 @@
-import ValueService from "../features/value/valueService"
+import ValueService from "./valueService"
 
 const services: any = {    
-    value: ValueService,
+    value: new ValueService(),
 };
 
 export const ServiceFactory = {

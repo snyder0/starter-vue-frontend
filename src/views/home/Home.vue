@@ -1,16 +1,16 @@
 <template>
   <div class="home">
-    <Value msg="Value Component"/>
+    This is a test
+    <router-view />
   </div>
 </template>
 
 <script lang="ts">
 import { Component, Vue } from 'vue-property-decorator'
-import Value from '@/features/value/Value.vue'
 
 @Component({
   components: {
-    Value,
+    Home,
   },
 })
 export default class Home extends Vue {}
