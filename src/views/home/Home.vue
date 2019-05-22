@@ -1,17 +1,14 @@
 <template>
   <div class="home">
-    This is a test
-    <router-view />
+    test
   </div>
 </template>
 
-<script lang="ts">
-import { Component, Vue } from 'vue-property-decorator'
-
-@Component({
+<script lang='ts'>
+export default {
+  name: 'Home',
   components: {
-    Home,
-  },
-})
-export default class Home extends Vue {}
+    
+  }
+}
 </script>
