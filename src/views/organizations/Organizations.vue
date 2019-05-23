@@ -1,27 +1,20 @@
 <template>
   <div class="organization">
-    <TextField
-      label="Organization"
-    />
-    <TextArea label="Organization" />
-    <SelectList
-      label="Select Organization"
-      :items="items"
-    />
+    Hey
   </div>
 </template>
 
 <script lang='ts'>
-import TextField from '@/components/form/textFields.vue'
-import TextArea from '@/components/form/textArea.vue'
-import SelectList from '@/components/form/selectList.vue'
+import RalTextField from '@/components/formFields/RalTextField.vue'
+import RalTextArea from '@/components/formFields/RalTextArea.vue'
+import RalSelectList from '@/components/formFields/RalSelectList.vue'
 
 export default {
   name: 'Organization',
   components: {
-    TextField,
-    TextArea,
-    SelectList,
+    RalTextField,
+    RalTextArea,
+    RalSelectList,
   },
   data() {
     return {

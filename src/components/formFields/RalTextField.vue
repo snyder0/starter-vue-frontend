@@ -18,7 +18,7 @@
 
 <script lang='ts'>
 export default {
-  name: 'TextField',
+  name: 'RalTextField',
   props: {
     label: {
       type: String,
@@ -60,7 +60,7 @@ export default {
   computed: {
   },
   mounted () {
-    console.log("mounted")
+
   },
   methods: {
   }
