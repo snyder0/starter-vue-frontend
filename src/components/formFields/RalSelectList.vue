@@ -16,7 +16,7 @@
 
 <script>
 export default {
-  name: 'SelectList',
+  name: 'RalSelectList',
   props: {
     label: {
       type: String,

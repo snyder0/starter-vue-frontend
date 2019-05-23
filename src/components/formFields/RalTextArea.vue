@@ -17,7 +17,7 @@
 </template>
 <script>
 export default {
-  name: 'TextArea',
+  name: 'RalTextArea',
   props: {
     label: {
       type: String,
