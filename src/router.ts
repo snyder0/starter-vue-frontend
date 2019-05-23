@@ -7,6 +7,28 @@ const router = new Router({
   mode: 'hash',
   routes: [],
 })
+
+// Router Navigation Guards
+router.beforeEach((to, from, next) => {
+  /* must call `next` */
+  if (to.matched.length > 0) {
+    // There is a matched route for the navigation to be fulfilled
+    next()
+  } else {
+    // There is no matched route for the navigation to be fulfilled
+    next('/')
+  }
+})
+
+router.beforeResolve((to, from, next) => {
+  /* must call `next` */
+  next()
+})
+
+router.afterEach((to, from) => {
+
+})
+
 export default router
 
 export class RouteBuilder {

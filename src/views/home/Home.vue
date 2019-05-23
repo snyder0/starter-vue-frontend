@@ -1,7 +1,18 @@
 <template>
-  <div class="home">
-    This is the home component
-  </div>
+  <v-container
+    fluid
+  >
+    <v-layout
+      align-center
+      justify-center
+    >
+      <div
+        class="home"
+      >
+        This is the home page
+      </div>
+    </v-layout>
+  </v-container>
 </template>
 
 <script lang='ts'>

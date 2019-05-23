@@ -1,20 +1,25 @@
 <template>
-  <div class="organization">
-    Hey
-  </div>
+  <v-container
+    fluid
+  >
+    <v-layout
+      align-center
+      justify-center
+    >
+      <div
+        class="oragnizations"
+      >
+        This is the oragnizations page
+      </div>
+    </v-layout>
+  </v-container>
 </template>
 
 <script lang='ts'>
-import RalTextField from '@/components/formFields/RalTextField.vue'
-import RalTextArea from '@/components/formFields/RalTextArea.vue'
-import RalSelectList from '@/components/formFields/RalSelectList.vue'
-
 export default {
   name: 'Organization',
   components: {
-    RalTextField,
-    RalTextArea,
-    RalSelectList,
+
   },
   data() {
     return {
