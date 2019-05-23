@@ -1,28 +1,23 @@
 import Vue from 'vue'
-import Router from 'vue-router'
+import Router, { RouteConfig } from 'vue-router'
 
 Vue.use(Router)
 
 const router = new Router({
   mode: 'hash',
-  routes: [
-    {
-      path: '/',
-      name: 'home',
-      component: () => import('@/views/home/Home.vue')
-    },
-    {
-      path: '/about',
-      name: 'about',
-      component: () => import('@/views/about/About.vue')
-    },
-    {
-      path: '/organization',
-      name: 'organization',
-      component: () => import('@/views/organization/Organization.vue')
-    },
-  ],
+  routes: [],
 })
-
 export default router
 
+export class RouteBuilder {
+  public registerRoutes (routes: RouteConfig[]) {
+    router.addRoutes(routes)
+  }
+
+  public importRoutes (r: any) {
+    r.keys().forEach(r)
+  }
+}
+
+let routeBuilder = new RouteBuilder()
+routeBuilder.importRoutes(require.context('@/views/', true, /route.ts$/))
