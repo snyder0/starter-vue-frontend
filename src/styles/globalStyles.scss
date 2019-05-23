@@ -9,8 +9,6 @@ $info: #00E5FF;
 $success: #76FF03;
 $warning: #FF9100;
 
-$iconwithtext: 5px;
-
 :export {
   primary: $primary;
   secondary: $secondary;
@@ -19,7 +17,6 @@ $iconwithtext: 5px;
   info: $info;
   success: $success;
   warning: $warning;
-  iconwithtext: $iconwithtext;
 }
 
 /* http://meyerweb.com/eric/tools/css/reset/
@@ -77,9 +74,4 @@ table {
   font-family: 'Avenir', Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  // text-align: center;
-}
-
-.icon-with-text {
-  padding-right: $iconwithtext;
 }
