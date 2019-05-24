@@ -1,7 +1,18 @@
 <template>
-  <div class="about">
-    <h1>This is an about page</h1>
-  </div>
+  <v-container
+    fluid
+  >
+    <v-layout
+      align-center
+      justify-center
+    >
+      <div
+        class="about"
+      >
+        This is the about page
+      </div>
+    </v-layout>
+  </v-container>
 </template>
 
 <script lang='ts'>
