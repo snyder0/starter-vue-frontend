@@ -1,5 +1,6 @@
 export const Fields = Object.freeze({
     TEXT: 'text',
     TEXTAREA: 'textarea',
-    SELECTLIST: 'selectlist'
+    SELECTLIST: 'selectlist',
+    SWITCH: 'switch'
   })
