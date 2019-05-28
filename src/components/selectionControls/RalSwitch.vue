@@ -23,7 +23,7 @@ export default {
     },
     color: {
       type: String,
-      default: "secondary",
+      default: "prinary",
     },
     value: {
         type: [Boolean, String],
@@ -31,11 +31,11 @@ export default {
     },
     trueValue: {
         type: [Boolean, String],
-        default: '',
+        default: true,
     },
     falseValue: {
         type: [Boolean, String],
-        default: '',
+        default: false,
     },
     ripple: {
         type: Boolean,
