@@ -36,10 +36,7 @@
                 </v-list-tile-content>
 
                 <v-list-tile-action>
-                  <v-icon
-                    hover
-                    :color="grey"
-                  >
+                  <v-icon>
                     edit
                   </v-icon>
                 </v-list-tile-action>

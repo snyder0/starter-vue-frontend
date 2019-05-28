@@ -44,7 +44,6 @@
         </v-list-tile>
         <v-list-tile
           v-if="!mini"
-          align-end
           @click.stop="mini = !mini"
         >
           <v-list-tile-action>
@@ -68,7 +67,7 @@
         Ralloc
       </v-toolbar-title>
       <v-spacer />
-      <v-toolbar-items class="hidden-sm-and-down">
+      <v-toolbar-items>
         <v-btn 
           flat 
           @click="formTesting"
