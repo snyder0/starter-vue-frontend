@@ -14,7 +14,7 @@
   </v-flex>
 </template>
 
-<script>
+<script lang='ts'>
 export default {
   name: 'RalSelectList',
   props: {

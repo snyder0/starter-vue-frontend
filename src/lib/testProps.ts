@@ -7,7 +7,7 @@ const testFields = [
     label: 'First Name',
     placeholder: 'First Name',
     type: Fields.TEXT,
-    layout: Layout.L12
+    layout: Layout.L12,
   },
   {
     key: 'text-field2',

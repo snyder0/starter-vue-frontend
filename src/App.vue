@@ -54,10 +54,8 @@ export default {
         form: {
           props: {
             fields: testFields,
-            data: {
-              hiddenInput: 'this is my hidden input'
-            }
-          }
+            data: {}
+          },
         },
         dialog: {
           props: {
@@ -85,7 +83,6 @@ export default {
       this.testingForm.dialog.props.show = true
     },
     async testingFormSave (data) {
-      console.log(data)
       let success = false
       try {
         //const OrganizationService = ServiceFactory.get('organization')
