@@ -14,8 +14,9 @@
           </v-list-tile-content>
         </v-list-tile>
       </v-list>
-
+        
       <v-list
+        fill-height
         class="pt-0"
         dense
       >
@@ -25,35 +26,46 @@
           :key="item.title"
           @click="menuSubmit(item)"
         >
-          <v-list-tile-action>
-            <v-icon>{{ item.icon }}</v-icon>
-          </v-list-tile-action>
-
-          <v-list-tile-content>
-            <v-list-tile-title>{{ item.title }}</v-list-tile-title>
-          </v-list-tile-content>
-        </v-list-tile>
-
-        <v-list-tile
-          v-if="mini"
-          @click.stop="mini = !mini"
-        >
-          <v-list-tile-action>
-            <v-icon>chevron_right</v-icon>
-          </v-list-tile-action>
-        </v-list-tile>
-        <v-list-tile
-          v-if="!mini"
-          @click.stop="mini = !mini"
-        >
-          <v-list-tile-action>
-            <v-icon>
-              chevron_left
-            </v-icon>
-          </v-list-tile-action>
+          <v-layout row>
+            <v-flex xs2>
+              <v-list-tile-action>
+                <v-icon>{{ item.icon }}</v-icon>
+              </v-list-tile-action>
+            </v-flex>
+            <v-flex xs10>
+              <v-list-tile-content>
+                <v-list-tile-title>{{ item.title }}</v-list-tile-title>
+              </v-list-tile-content>
+            </v-flex>
+          </v-layout>
         </v-list-tile>
       </v-list>
+        
+      <v-layout
+        align-end
+        justify-end
+      >
+        <v-btn
+          v-if="mini"
+          icon
+          flat
+          color="accent"
+          @click.stop="mini = !mini"
+        >
+          <v-icon>chevron_right</v-icon>
+        </v-btn>
+        <v-btn
+          v-if="!mini"
+          icon
+          flat
+          color="accent"
+          @click.stop="mini = !mini"
+        >
+          <v-icon>chevron_left</v-icon>
+        </v-btn>
+      </v-layout>
     </v-navigation-drawer>
+    
     <v-toolbar 
       dense 
       fixed 
@@ -92,7 +104,7 @@ export default {
         { title: 'About', icon: 'info', path: '/about' },
         { title: 'Organizations', icon: 'domain', path: '/organizations' }
       ],
-      mini: true,
+      mini: false,
       clipped: false,
       right: null
     }

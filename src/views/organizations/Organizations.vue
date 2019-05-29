@@ -1,6 +1,18 @@
 <template>
   <v-container fluid>
     <v-layout
+      align-start
+      justify-end
+    >
+      <v-btn
+        color="primary"
+        @click="addOrganization"
+      >
+        Create
+        <v-icon>add</v-icon>
+      </v-btn>
+    </v-layout>
+    <v-layout
       align-center
       justify-center
       row
@@ -8,19 +20,6 @@
       <v-flex
         s12
       >
-        <v-layout
-          align-start
-          justify-end
-        >
-          <v-btn
-            color="primary"
-            @click="addOrganization"
-          >
-            Create
-            <v-icon>add</v-icon>
-          </v-btn>
-        </v-layout>
-      
         <div class="oragnizations">
           <v-card>
             <v-toolbar
