@@ -153,7 +153,8 @@ export default {
         { title: 'Log Out', icon: 'exit_to_app', path: '/logout' }
       ],
       mini: true,
-      right: null
+      right: null,
+      test: true
     }
   },
   computed: {
