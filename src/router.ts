@@ -1,11 +1,18 @@
 import Vue from 'vue'
 import Router, { RouteConfig } from 'vue-router'
+import Login from '@/views/login/Login.vue'
 
 Vue.use(Router)
 
 const router = new Router({
   mode: 'hash',
-  routes: [],
+  routes: [
+    {
+      name: 'login',
+      path: '/login',
+      component: Login
+    }
+  ],
 })
 
 // Router Navigation Guards
