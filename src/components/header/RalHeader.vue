@@ -5,7 +5,6 @@
       :clipped="clipped"
       :mini-variant="mini"
       enable-resize-watcher
-      stateless
       app
       class="hidden-md-and-up"
     >
@@ -55,6 +54,7 @@
           icon
           flat
           color="accent"
+          class="hidden-md-and-up"
           @click.stop="mini = !mini"
         >
           <v-icon>chevron_right</v-icon>
@@ -71,7 +71,7 @@
       </v-layout>
     </v-navigation-drawer>
     
-    <v-toolbar 
+    <v-toolbar
       dense 
       app
       flat

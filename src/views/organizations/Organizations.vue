@@ -22,9 +22,7 @@
       >
         <div class="oragnizations">
           <v-card>
-            <v-toolbar
-              dark
-            >
+            <v-toolbar flat>
               <v-toolbar-title class="text-xs-center">
                 Oragnizations
               </v-toolbar-title>
@@ -38,24 +36,30 @@
 
             <v-list subheader>
               <v-subheader />
-              <v-list-tile
-                v-for="item in items"
-                :key="item.title"
-              >
-                <v-list-tile-content>
-                  <v-list-tile-title>
-                    {{
-                      item.title
-                    }}
-                  </v-list-tile-title>
-                </v-list-tile-content>
+              <template v-for="(item, index) in items">
+                <v-list-tile
+                  :key="item.title"
+                  @click=""
+                >
+                  <v-list-tile-content>
+                    <v-list-tile-title>
+                      {{
+                        item.title
+                      }}
+                    </v-list-tile-title>
+                  </v-list-tile-content>
 
-                <v-list-tile-action>
-                  <v-icon>
-                    edit
-                  </v-icon>
-                </v-list-tile-action>
-              </v-list-tile>
+                  <v-list-tile-action>
+                    <v-icon>
+                      edit
+                    </v-icon>
+                  </v-list-tile-action>
+                </v-list-tile>
+                <v-divider
+                  v-if="index + 1 < items.length"
+                  :key="index"
+                />
+              </template>
             </v-list>
           </v-card>
         </div>
