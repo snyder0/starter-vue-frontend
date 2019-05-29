@@ -1,6 +1,6 @@
 <template>
   <v-container>
-    <form>
+    <v-form>
       <v-layout 
         row 
         wrap
@@ -57,12 +57,24 @@
             :required="required"
           />
 
+          <!-- <ral-switch
+            v-else-if="ralSwitchTypes.includes(field.type)"
+            :label="label"
+            :color="color"
+            :ripple="ripple"
+            :value="value"
+            :true-value="trueValue"
+            :false-value="falseValue"
+            :disabled="disabled"
+            :required="required"
+          /> -->
+
           <div v-else>
             Unsupported field type: {{ field.type }}
           </div>
         </v-flex>
       </v-layout>
-    </form>
+    </v-form>
   </v-container>
 </template>
 
@@ -75,7 +87,8 @@ export default {
   components: {
     RalTextField: () => import('@/components/formFields/RalTextField.vue'),
     RalTextArea: () => import('@/components/formFields/RalTextArea.vue'),
-    RalSelectList: () => import('@/components/formFields/RalSelectList.vue')
+    RalSelectList: () => import('@/components/formFields/RalSelectList.vue'),
+    //RalSwitch: () => import('@/components/selectionControls/RalSwitch')
   },
   props: props,
   data () {
@@ -88,6 +101,9 @@ export default {
       ],
       ralSelectListTypes: [
         Fields.SELECTLIST
+      ],
+      ralSwitchTypes: [
+        Fields.SWITCH
       ]
     }
   },
