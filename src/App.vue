@@ -5,7 +5,10 @@
 
     <!-- ROUTER VIEW COMPONENT -->
     <v-content>
-      <v-container fluid>
+      <v-container
+        fluid
+        fill-height
+      >
         <router-view />
       </v-container>
     </v-content>
@@ -104,3 +107,8 @@ export default {
   }
 }
 </script>
+
+.v-icon {
+    color: var(--v-primary-base)
+    background-color: var(--v-accent-lighten2)
+  }

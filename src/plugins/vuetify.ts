@@ -7,5 +7,6 @@ import { mainTheme } from '@/styles/mainTheme.ts'
 
 Vue.use(Vuetify, {
   iconfont: 'md',
-  theme: mainTheme
+  theme: mainTheme,
+  customProperties: true
 })

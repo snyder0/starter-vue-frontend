@@ -1,63 +1,62 @@
 <template>
-  <v-container>
-    <v-form>
-      <v-layout 
-        row 
-        wrap
-      >
-        <v-flex
-          v-for="field in fields"
-          ref="form"
+  <v-layout 
+    row 
+    wrap
+  >
+    <v-flex
+      v-for="field in fields"
+      ref="form"
+      :key="field.key"
+      :class="getFieldLayout(field)"
+      class="ral-form-inputs"
+    >
+      <v-form>
+        <ral-text-field 
+          v-if="ralTextFieldTypes.includes(field.type)"
+          :id="field.key"
+          :ref="field.key"
           :key="field.key"
-          :class="getFieldLayout(field)"
-          class="ral-form-inputs"
-        >
-          <ral-text-field 
-            v-if="ralTextFieldTypes.includes(field.type)"
-            :id="field.key"
-            :ref="field.key"
-            :key="field.key"
-            :label="field.label"
-            :hint="field.hint"
-            :value="value"
-            :placeholder="placeholder"
-            :autofocus="autofocus"
-            :clearable="clearable"
-            :disabled="disabled"
-            :required="required"
-          />
+          :label="field.label"
+          :hint="field.hint"
+          :value="value"
+          :placeholder="placeholder"
+          :autofocus="autofocus"
+          :clearable="clearable"
+          :disabled="disabled"
+          :required="required"
+        />
 
-          <ral-text-area 
-            v-else-if="ralTextAreaTypes.includes(field.type)"
-            :id="field.key"
-            :ref="field.key"
-            :key="field.key"
-            :label="field.label"
-            :hint="field.hint"
-            :value="value"
-            :placeholder="placeholder"
-            :autofocus="autofocus"
-            :clearable="clearable"
-            :disabled="disabled"
-            :required="required"
-          />
+        <ral-text-area 
+          v-else-if="ralTextAreaTypes.includes(field.type)"
+          :id="field.key"
+          :ref="field.key"
+          :key="field.key"
+          :label="field.label"
+          :hint="field.hint"
+          :value="value"
+          :placeholder="placeholder"
+          :autofocus="autofocus"
+          :clearable="clearable"
+          :disabled="disabled"
+          :required="required"
+        />
 
-          <ral-select-list 
-            v-else-if="ralSelectListTypes.includes(field.type)"
-            :id="field.key"
-            :ref="field.key"
-            :key="field.key"
-            :label="field.label"
-            :value="value"
-            :items="field.items"
-            :hint="field.hint"
-            :placeholder="placeholder"
-            :multiple="field.multiple"
-            :disabled="disabled"
-            :required="required"
-          />
+        <ral-select-list 
+          v-else-if="ralSelectListTypes.includes(field.type)"
+          :id="field.key"
+          :ref="field.key"
+          :key="field.key"
+          :label="field.label"
+          :value="value"
+          :items="field.items"
+          :hint="field.hint"
+          :placeholder="placeholder"
+          :multiple="field.multiple"
+          :disabled="disabled"
+          :required="required"
+        />
 
-          <!-- <ral-switch
+        <!-- <ral-switch
             v-else-if="ralSwitchTypes.includes(field.type)"
             :label="label"
             :color="color"
@@ -69,13 +68,12 @@
             :required="required"
           /> -->
 
-          <div v-else>
-            Unsupported field type: {{ field.type }}
-          </div>
-        </v-flex>
-      </v-layout>
-    </v-form>
-  </v-container>
+        <div v-else>
+          Unsupported field type: {{ field.type }}
+        </div>
+      </v-form>
+    </v-flex>
+  </v-layout>
 </template>
 
 <script>
