@@ -7,6 +7,7 @@
       enable-resize-watcher
       stateless
       app
+      class="hidden-md-and-up"
     >
       <v-list class="pa-1">
         <v-list-tile>
@@ -73,6 +74,7 @@
     <v-toolbar 
       dense 
       app
+      flat
       height="56"
     >
       <v-toolbar-side-icon 
@@ -111,7 +113,12 @@
             slot="activator"
             flat
           >
-            <v-icon>person</v-icon>
+            <v-icon
+              color="primary"
+              class="mr-1"
+            >
+              account_circle
+            </v-icon>
             User Menu
           </v-btn>
           <v-list>
@@ -153,12 +160,11 @@ export default {
         { title: 'Log Out', icon: 'exit_to_app', path: '/logout' }
       ],
       mini: true,
-      right: null,
-      test: true
+      right: null
     }
   },
   computed: {
-
+    
   },
   methods: {
     formTesting (items) {
