@@ -5,6 +5,7 @@
       :clipped="clipped"
       :mini-variant="mini"
       enable-resize-watcher
+      stateless
       app
     >
       <v-list class="pa-1">
@@ -29,7 +30,9 @@
           <v-layout row>
             <v-flex xs2>
               <v-list-tile-action>
-                <v-icon>{{ item.icon }}</v-icon>
+                <v-icon color="primary">
+                  {{ item.icon }}
+                </v-icon>
               </v-list-tile-action>
             </v-flex>
             <v-flex xs10>
@@ -43,7 +46,8 @@
         
       <v-layout
         align-end
-        justify-end
+        :justify-end="mini ? false : true"
+        :justify-center="mini ? true : false"
       >
         <v-btn
           v-if="mini"
@@ -68,24 +72,63 @@
     
     <v-toolbar 
       dense 
-      fixed 
-      app 
-      :clipped-left="clipped"
+      app
+      height="56"
     >
       <v-toolbar-side-icon 
+        class="hidden-md-and-up"
         @click.stop="drawer = !drawer"
-      />
+      >
+        <v-icon>
+          {{ !drawer ? 'menu' : 'close' }}
+        </v-icon>
+      </v-toolbar-side-icon>
       <v-toolbar-title>
         Ralloc
       </v-toolbar-title>
       <v-spacer />
-      <v-toolbar-items>
+      <v-toolbar-items
+        v-for="(item, index) in items"
+        :key="index"
+        class="hidden-sm-and-down"
+      >
         <v-btn 
           flat 
-          @click="formTesting"
+          @click="goToPage(item.path)"
         >
-          Form Testing
+          {{ item.title }}
         </v-btn>
+      </v-toolbar-items>
+      <v-toolbar-items>
+        <v-menu
+          offset-y
+          offset-x
+          open-on-hover
+          max-height
+          max-width
+        >
+          <v-btn
+            slot="activator"
+            flat
+          >
+            <v-icon>person</v-icon>
+            User Menu
+          </v-btn>
+          <v-list>
+            <v-list-tile
+              v-for="(userMenuItems, index) in userMenu"
+              :key="index"
+            >
+              <v-icon
+                class="mr-3"
+                color="primary"
+              >
+                {{ userMenuItems.icon }}
+              </v-icon>
+              <v-list-tile-title>{{ userMenuItems.title }}</v-list-tile-title>
+            </v-list-tile>
+          </v-list>
+        </v-menu>
       </v-toolbar-items>
     </v-toolbar>
   </div>
@@ -99,13 +142,17 @@ export default {
   data () {
     return {
       drawer: false,
+      clipped: false,
       items: [
         { title: 'Home', icon: 'home', path: '/' },
         { title: 'About', icon: 'info', path: '/about' },
         { title: 'Organizations', icon: 'domain', path: '/organizations' }
       ],
-      mini: false,
-      clipped: false,
+      userMenu: [
+        { title: 'Settings', icon: 'settings', path: '/usersettings' },
+        { title: 'Log Out', icon: 'exit_to_app', path: '/logout' }
+      ],
+      mini: true,
       right: null
     }
   },
@@ -118,6 +165,9 @@ export default {
     },
     menuSubmit (item) {
       this.$router.push(item.path)
+    },
+    goToPage (path) {
+      this.$router.push(path);
     }
   }
 
