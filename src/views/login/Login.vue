@@ -7,13 +7,16 @@
     <v-flex
       xs12
       sm8
-      md4
+      md8
+      lg4
     >
       <v-card
-        flat
+
         class="mt-5"
       >
-        <v-toolbar flat>
+        <v-toolbar
+          flat
+        >
           <v-toolbar-title>{{ loginForm ? "Login" : "Register" }}</v-toolbar-title>
           <v-spacer />
           <div v-if="loginForm">
@@ -29,13 +32,14 @@
           <v-form ref="form">
             <v-text-field
               autofocus
-              prepend-icon="person"
-              name="login"
-              label="Login"
+              prepend-icon="email"
+              name="email"
+              label="Email"
               type="text" 
             />
             <v-text-field
               id="password"
+              
               prepend-icon="lock"
               name="password"
               label="Password"
@@ -47,27 +51,27 @@
           <v-form ref="form">
             <v-text-field
               prepend-icon="person"
-              name="first"
-              label="test"
+              name="firstname"
+              label="First Name"
               type="text" 
             />
             <v-text-field
               prepend-icon="person"
-              name="login"
-              label="test"
+              name="lastname"
+              label="Last Name"
               type="text" 
             />
             <v-text-field
-              prepend-icon="person"
-              name="login"
-              label="test"
+              prepend-icon="email"
+              name="email"
+              label="Email"
               type="text" 
             />
             <v-text-field
               id="password"
               prepend-icon="lock"
               name="password"
-              label="test2"
+              label="Password"
               type="password" 
             />
           </v-form>
