@@ -1,5 +1,3 @@
-/* eslint-disable */
-
 <template>
   <v-flex>
     <v-text-field

@@ -1,5 +1,3 @@
-/* eslint-disable */
-
 import { Fields } from '@/lib/types/field.ts'
 import { Layout } from '@/lib/types/layout.ts'
 
