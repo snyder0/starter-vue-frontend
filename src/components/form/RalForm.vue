@@ -42,6 +42,8 @@
           :clearable="clearable"
           :disabled="disabled"
           :required="required"
+          :prepend-icon="field.prependIcon"
+          :append-icon="field.appendIcon"
           @updateValue="value => updateValue(field.key, value)"
         />
 
