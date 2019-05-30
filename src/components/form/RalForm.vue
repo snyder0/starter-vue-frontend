@@ -62,17 +62,57 @@
           @updateValue="value => updateValue(field.key, value)"
         />
 
-        <!-- <ral-switch
-            v-else-if="ralSwitchTypes.includes(field.type)"
-            :label="label"
-            :color="color"
-            :ripple="ripple"
-            :value="value"
-            :true-value="trueValue"
-            :false-value="falseValue"
-            :disabled="disabled"
-            :required="required"
-          /> -->
+        <ral-switch
+          v-else-if="ralSwitchTypes.includes(field.type)"
+          :label="field.label"
+          :color="field.color"
+          :ripple="field.ripple"
+          :value="value"
+          :true-value="field.trueValue"
+          :false-value="field.falseValue"
+          :disabled="field.disabled"
+          :required="field.required"
+        />
+
+        <ral-date-picker
+          v-else-if="ralDatePicker.includes(field.type)"
+          :landscape="field.landscape"
+          :reactive="field.reactive"
+          :color="field.color"
+          :event-color="field.eventColor"
+          :first-day-of-week="field.firstDayOfWeek"
+          :value="value"
+          :year-icon="field.yearIcon"
+          :width="field.width"
+          :show-current="field.showCurrent"
+          :disabled="field.disabled"
+          :full-width="field.fullWidth"
+        />
+
+        <ral-time-picker
+          v-else-if="ralTimePicker.includes(field.type)"
+          :landscape="field.landscape"
+          :color="field.color"
+          :allowed-hours="field.allowedHours"
+          :allowed-minutes="field.allowedMinutes"
+          :event-color="field.eventColor"
+          :use-seconds="field.useSeconds"
+          :value="value"
+          :width="field.width"
+          :disabled="field.disabled"
+          :full-width="field.fullWidth"
+        />
+
+        <ral-radio
+          v-else-if="ralRadioTypes.includes(field.type)"
+          :label="field.label"
+          :color="field.color"
+          :value="value"
+          :ripple="field.ripple"
+          :disabled="field.disabled"
+          :required="field.required"
+          :items="field.items"
+        />
 
         <div v-else>
           Unsupported field type: {{ field.type }}
@@ -85,6 +125,7 @@
 <script>
 import { Fields } from '@/lib/types/field.ts'
 import { props } from './props.ts'
+import RalTimePickerVue from '../dateTimePickers/RalTimePicker.vue';
 
 export default {
   name: 'RalForm',
@@ -92,7 +133,10 @@ export default {
     RalTextField: () => import('@/components/formFields/RalTextField.vue'),
     RalTextArea: () => import('@/components/formFields/RalTextArea.vue'),
     RalSelectList: () => import('@/components/formFields/RalSelectList.vue'),
-    //RalSwitch: () => import('@/components/selectionControls/RalSwitch')
+    RalSwitch: () => import('@/components/selectionControls/RalSwitch.vue'),
+    RalDatePicker: () => import('@/components/dateTimePickers/RalDatePicker.vue'),
+    RalTimePicker: () => import('@/components/dateTimePickers/RalTimePicker.vue'),
+    RalRadio: () => import('@/components/selectionControls/RalRadio.vue')
   },
   props: props,
   data () {
@@ -108,6 +152,15 @@ export default {
       ],
       ralSwitchTypes: [
         Fields.SWITCH
+      ],
+      ralDatePicker: [
+        Fields.DATE
+      ],
+      ralTimePicker: [
+        Fields.TIME
+      ],
+      ralRadioTypes: [
+        Fields.RADIO
       ]
     }
   },

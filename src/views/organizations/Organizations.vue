@@ -150,13 +150,18 @@ export default {
       this.addForm.dialog.props.show = true
     },
     async organizationFormSave (data) {
-      debugger
+      //debugger
+      let payload = {}
+      this.addForm.form.props.fields.forEach((field) => {
+        payload[field.key] = field.value
+      })
+      console.log(payload)
       let success = false
       try {
         //const OrganizationService = ServiceFactory.get('organization')
 
         //const response = await OrganizationService.get()
-        response = true;
+        let response = true
 
         if (response) {
           success = true

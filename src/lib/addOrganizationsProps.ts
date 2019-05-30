@@ -3,42 +3,26 @@ import { Layout } from '@/lib/types/layout.ts'
 
 const testFields = [
   {
-    key: 'organization-name',
+    key: 'name',
     label: 'Name',
     placeholder: 'Organization Name',
-    type: Fields.TEXTAREA,
+    type: Fields.TEXT,
     layout: Layout.L6,
   },
   {
-    key: 'organization-abbriviation',
+    key: 'abbriviation',
     label: 'Abbriviation',
     placeholder: 'Organization Abbriviation',
     type: Fields.TEXT,
     layout: Layout.L6
   },
   {
-    key: 'organization-url',
+    key: 'url',
     label: 'Url',
     placeholder: 'Organization Url',
     type: Fields.TEXT,
     layout: Layout.L12,
   },
-  {
-    key: 'select-list',
-    label: 'Select List',
-    type: Fields.SELECTLIST,
-    layout: Layout.L6,
-    items: [
-      {
-        text: 'Option 1',
-        value: 1
-      },
-      {
-        text: 'Option 2',
-        value: 2
-      }
-    ]
-  }
 ]
 
 export default testFields
