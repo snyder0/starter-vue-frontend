@@ -19,45 +19,49 @@
 export default {
   name: "RalTimePicker",
   props: {
+    landscape: {
+      type: Boolean,
+      default: false
+    },
     allowedHours: {
-        type: Function,
-        default: null,
+      type: Function,
+      default: null
     },
     allowedMinutes: {
-        type: Function,
-        default: null,
+      type: Function,
+      default: null
     },
     useSeconds: {
-        type: Boolean,
-        default: false,
+      type: Boolean,
+      default: false
     },
     color: {
-        type: String,
-        default: "secondary",
+      type: String,
+      default: "secondary"
     },
     eventColor: {
-        type: [Array, Function, Object, String],
-        default: '',
+      type: [Array, Function, Object, String],
+      default: ''
     },
     value: {
-        type: [Boolean, String],
-        default: '',
+      type: [Boolean, String],
+      default: ''
     },
     width: {
-        type: [Number, String],
-        default: 290,
+      type: [Number, String],
+      default: 290
     },
     fullWidth: {
-        type: Boolean,
-        default: false,
+      type: Boolean,
+      default: true
     },
-    diabled: {
-        type: Boolean,
-        default: false,
+    disabled: {
+      type: Boolean,
+      default: false
     },
     required: {
-        type: Boolean,
-        default: false,
+      type: Boolean,
+      default: false
     }
   },
   data() {

@@ -1,13 +1,17 @@
 <template>
   <v-flex>
-    <v-radio
-      :label="label"
-      :color="color"
-      :value="value"
-      :ripple="ripple"
-      :disabled="disabled"
-      :required="required"
-    />
+    <v-radio-group>
+      <v-radio
+        v-for="(item, index) in items"
+        :key="index"
+        :label="item.label"
+        :color="item.color"
+        :value="item.value"
+        :ripple="item.ripple"
+        :disabled="item.disabled"
+        :required="item.required"
+      />
+    </v-radio-group>
   </v-flex>
 </template>
 
@@ -15,6 +19,10 @@
 export default {
   name: "RalRadio",
   props: {
+    items: {
+      type: Array,
+      default: () => []
+    },
     label: {
       type: String,
       default: "",
@@ -31,7 +39,7 @@ export default {
         type: Boolean,
         default: true,
     },
-    diabled: {
+    disabled: {
         type: Boolean,
         default: false,
     },
@@ -44,7 +52,8 @@ export default {
     return {};
   },
   computed: {},
-  mounted() {},
+  mounted() {
+  },
   methods: {}
 };
 </script>

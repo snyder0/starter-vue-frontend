@@ -23,31 +23,31 @@ export default {
     },
     color: {
       type: String,
-      default: "prinary",
+      default: "",
     },
     value: {
-        type: [Boolean, String],
-        default: '',
+      type: [Boolean, String],
+      default: '',
     },
     trueValue: {
-        type: [Boolean, String],
-        default: true,
+      type: [Boolean, String],
+      default: true,
     },
     falseValue: {
-        type: [Boolean, String],
-        default: false,
+      type: [Boolean, String],
+      default: false,
     },
     ripple: {
-        type: Boolean,
-        default: true,
+      type: Boolean,
+      default: true,
     },
-    diabled: {
-        type: Boolean,
-        default: false,
+    disabled: {
+      type: Boolean,
+      default: false,
     },
     required: {
-        type: Boolean,
-        default: false,
+      type: Boolean,
+      default: false,
     }
   },
   data() {

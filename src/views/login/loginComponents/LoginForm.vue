@@ -15,7 +15,10 @@
       >
         clear
       </v-btn>
-      <v-btn color="primary">
+      <v-btn
+        color="primary"
+        @click="testSubmit"
+      >
         Login
       </v-btn>
     </v-card-actions>
@@ -40,6 +43,9 @@ import loginFormFields from '../loginFormConfig/loginFormFields'
       reset () {
         this.$refs.loginForm.reset()
       },
+      testSubmit () {
+        debugger
+      }
     }
   }
 </script>

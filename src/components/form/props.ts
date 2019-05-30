@@ -11,6 +11,14 @@ export const props = {
       type: String,
       default: ''
     },
+    landscape: {
+      type: Boolean,
+      default: false
+    },
+    items: {
+      type: Array,
+      default: () => []
+    },
     hint: {
       type: String,
       default: ''

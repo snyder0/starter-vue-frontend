@@ -20,49 +20,53 @@
 export default {
   name: "RalDatePicker",
   props: {
+    landscape: {
+      type: Boolean,
+      default: false
+    },
     color: {
       type: String,
       default: "secondary",
     },
     eventColor: {
-        type: [Array, Function, Object, String],
-        default: '',
+      type: [Array, Function, Object, String],
+      default: '',
     },
     reactive: {
-        type: Boolean,
-        default: false,
+      type: Boolean,
+      default: false,
     },
     value: {
-        type: [Boolean, String],
-        default: '',
+      type: [Boolean, String],
+      default: '',
     },
     firstDayOfWeek: {
-        type: [String, Number],
-        default: 0,
+      type: [String, Number],
+      default: 0,
     },
     showCurrent: {
-        type: [String, Boolean],
-        default: true,
+      type: [String, Boolean],
+      default: true,
     },
     yearIcon: {
-        type: String,
-        default: '',
+      type: String,
+      default: '',
     },
     width: {
-        type: [Number, String],
-        default: 290,
+      type: [Number, String],
+      default: 290,
     },
     fullWidth: {
-        type: Boolean,
-        default: false,
+      type: Boolean,
+      default: true,
     },
-    diabled: {
-        type: Boolean,
-        default: false,
+    disabled: {
+      type: Boolean,
+      default: false,
     },
     required: {
-        type: Boolean,
-        default: false,
+      type: Boolean,
+      default: false,
     }
   },
   data() {

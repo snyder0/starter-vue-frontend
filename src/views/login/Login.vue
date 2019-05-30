@@ -12,6 +12,7 @@
     >
       <v-card
         class="mt-5"
+        min-width="1000"
       >
         <v-toolbar
           flat
