@@ -1,23 +1,10 @@
 <template>
   <div>
     <v-card-text>
-      <v-form ref="loginForm">
-        <v-text-field
-          autofocus
-          prepend-icon="email"
-          name="email"
-          label="Email"
-          type="text" 
-        />
-        <v-text-field
-          id="password"
-              
-          prepend-icon="lock"
-          name="password"
-          label="Password"
-          type="password" 
-        />
-      </v-form>
+      <ral-form
+        ref="loginForm"
+        :fields="loginFormFields"
+      />
     </v-card-text>
     <v-card-actions>
       <v-spacer />
@@ -36,26 +23,29 @@
 </template>
 
 <script lang='ts'>
+import RalForm from '@/components/form/RalForm.vue'
+import loginFormFields from '../loginFormConfig/loginFormFields'
+
   export default {
     name: 'LoginForm',
     components: {
-      
+      RalForm
     },
     data() {
       return {
-
+        loginFormFields: loginFormFields
       }
     },
-    computed: {
-
-    },
     methods: {
-      switchForms () {
-
-      },
       reset () {
         this.$refs.loginForm.reset()
       },
     }
   }
 </script>
+
+<style lang="scss">
+    .v-icon {
+        color: $primary !important
+    }
+</style>

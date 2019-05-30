@@ -36,9 +36,9 @@
 </template>
 
 <script lang='ts'>
-import LoginForm from './components/LoginForm.vue'
-import RegisterForm from './components/RegisterForm.vue'
-import RegisterFormVue from './components/RegisterForm.vue';
+import LoginForm from './loginComponents/LoginForm.vue'
+import RegisterForm from './loginComponents/RegisterForm.vue'
+import RegisterFormVue from './loginComponents/RegisterForm.vue';
   export default {
     name: 'Login',
     components: {
