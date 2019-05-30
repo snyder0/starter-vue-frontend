@@ -11,6 +11,7 @@
       lg4
     >
       <v-card
+
         class="mt-5"
       >
         <v-toolbar
@@ -28,7 +29,7 @@
           </div>
         </v-toolbar>
         <v-card-text v-if="loginForm">
-          <v-form>
+          <v-form ref="form">
             <v-text-field
               autofocus
               prepend-icon="email"
@@ -47,7 +48,7 @@
           </v-form>
         </v-card-text>
         <v-card-text v-else>
-          <v-form>
+          <v-form ref="form">
             <v-text-field
               prepend-icon="person"
               name="firstname"
@@ -80,6 +81,7 @@
           <v-btn
             flat
             color="error"
+            @click="reset"
           >
             clear
           </v-btn>
@@ -116,7 +118,10 @@
           this.loginForm = !this.loginForm
           this.registerForm = !this.registerForm
         }
-      }
+      },
+      reset () {
+        this.$refs.form.reset()
+      },
     }
   }
 </script>

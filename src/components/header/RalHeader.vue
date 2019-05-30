@@ -6,7 +6,7 @@
       :mini-variant="mini"
       enable-resize-watcher
       app
-      class="hidden-md-and-up"
+      class="hidden-sm-and-up"
     >
       <v-list class="pa-1">
         <v-list-tile>
@@ -78,7 +78,7 @@
       height="56"
     >
       <v-toolbar-side-icon 
-        class="hidden-md-and-up"
+        class="hidden-sm-and-up"
         @click.stop="drawer = !drawer"
       >
         <v-icon>
@@ -159,7 +159,7 @@ export default {
         { title: 'Settings', icon: 'settings', path: '/usersettings' },
         { title: 'Log Out', icon: 'exit_to_app', path: '/logout' }
       ],
-      mini: true,
+      mini: false,
       right: null
     }
   },

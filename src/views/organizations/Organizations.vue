@@ -130,7 +130,7 @@ export default {
             closeButtonLabel: 'cancel',
             buttons: [
               {
-                label: 'Create',
+                label: 'Submit',
                 data: {},
                 callback: this.organizationFormSave
               }
@@ -140,6 +140,9 @@ export default {
       }
     }
   },
+  updated() {
+
+  },
   methods: {
     addOrganization () {
       this.$set(this.addForm.form.props, 'fields', addOrganizationsFields)
@@ -147,6 +150,7 @@ export default {
       this.addForm.dialog.props.show = true
     },
     async organizationFormSave (data) {
+      debugger
       let success = false
       try {
         //const OrganizationService = ServiceFactory.get('organization')

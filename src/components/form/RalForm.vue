@@ -5,12 +5,11 @@
   >
     <v-flex
       v-for="field in fields"
-      ref="form"
       :key="field.key"
       :class="getFieldLayout(field)"
       class="ral-form-inputs"
     >
-      <v-form>
+      <v-form ref="RalForm">
         <ral-text-field 
           v-if="ralTextFieldTypes.includes(field.type)"
           :id="field.key"
@@ -24,6 +23,7 @@
           :clearable="clearable"
           :disabled="disabled"
           :required="required"
+          @updateValue="value => updateValue(field.key, value)"
         />
 
         <ral-text-area 
@@ -39,6 +39,7 @@
           :clearable="clearable"
           :disabled="disabled"
           :required="required"
+          @updateValue="value => updateValue(field.key, value)"
         />
 
         <ral-select-list 
@@ -54,6 +55,7 @@
           :multiple="field.multiple"
           :disabled="disabled"
           :required="required"
+          @updateValue="value => updateValue(field.key, value)"
         />
 
         <!-- <ral-switch
@@ -105,9 +107,22 @@ export default {
       ]
     }
   },
+  updated () {
+
+  },
   methods: {
     getFieldLayout (field) {
       return field.layout
+    },
+    updateValue (key, value) {
+      let updatedKey = key
+      let updatedValue = value
+      for (let i=0; i < this.fields.length; i++) {
+        let fieldData = this.fields[i]
+        if (fieldData.key === updatedKey) {
+          fieldData.value = updatedValue
+        }
+      }
     }
   }
 }

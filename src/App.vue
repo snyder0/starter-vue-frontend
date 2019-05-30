@@ -31,7 +31,7 @@
   </v-app>
 </template>
 
-<script>
+<script type="ts">
 import RalHeader from '@/components/header/RalHeader.vue'
 import RalDialog from '@/components/dialog/RalDialog.vue'
 import RalForm from '@/components/form/RalForm.vue'
