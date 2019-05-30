@@ -35,6 +35,14 @@ export const props = {
       type: Boolean,
       default: false
     },
+    prependIcon: {
+      type: String,
+      default: ''
+    },
+    appendIcon: {
+      type: String,
+      default: ''
+    },
     value: {
       type: null
     }

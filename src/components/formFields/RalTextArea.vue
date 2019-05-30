@@ -10,6 +10,8 @@
       :clearable="clearable"
       :disabled="disabled"
       :required="required"
+      :prepend-icon="prependIcon"
+      :append-icon="appendIcon"
       @input="value => $emit('updateValue', value)"
     />
   </v-flex>
@@ -45,6 +47,14 @@ export default {
     required: {
       type: Boolean,
       default: false
+    },
+    prependIcon: {
+      type: String,
+      default: ''
+    },
+    appendIcon: {
+      type: String,
+      default: ''
     },
     value: {
       type: [Boolean, String],

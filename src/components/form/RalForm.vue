@@ -23,6 +23,8 @@
           :clearable="clearable"
           :disabled="disabled"
           :required="required"
+          :prepend-icon="field.prependIcon"
+          :append-icon="field.appendIcon"
           @updateValue="value => updateValue(field.key, value)"
         />
 
@@ -39,6 +41,8 @@
           :clearable="clearable"
           :disabled="disabled"
           :required="required"
+          :prepend-icon="field.prependIcon"
+          :append-icon="field.appendIcon"
           @updateValue="value => updateValue(field.key, value)"
         />
 
@@ -106,6 +110,12 @@ export default {
         Fields.SWITCH
       ]
     }
+  },
+  updated () {
+
+  },
+  mounted () {
+
   },
   updated () {
 
