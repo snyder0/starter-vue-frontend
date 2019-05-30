@@ -10,8 +10,7 @@
       :clearable="clearable"
       :disabled="disabled"
       :required="required"
-      @input="value => $emit('input', value)"
-      @change="value => $emit('input', value)"
+      @input="value => $emit('updateValue', value)"
     />
   </v-flex>
 </template>

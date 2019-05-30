@@ -11,10 +11,9 @@
     >
       <v-card
         flat
+        class="mt-5"
       >
-        <v-toolbar
-          dark
-        >
+        <v-toolbar flat>
           <v-toolbar-title>{{ loginForm ? "Login" : "Register" }}</v-toolbar-title>
           <v-spacer />
           <div v-if="loginForm">
@@ -27,8 +26,9 @@
           </div>
         </v-toolbar>
         <v-card-text v-if="loginForm">
-          <v-form>
+          <v-form ref="form">
             <v-text-field
+              autofocus
               prepend-icon="person"
               name="login"
               label="Login"
@@ -44,7 +44,7 @@
           </v-form>
         </v-card-text>
         <v-card-text v-else>
-          <v-form>
+          <v-form ref="form">
             <v-text-field
               prepend-icon="person"
               name="first"
@@ -77,6 +77,7 @@
           <v-btn
             flat
             color="error"
+            @click="reset"
           >
             clear
           </v-btn>
@@ -113,7 +114,10 @@
           this.loginForm = !this.loginForm
           this.registerForm = !this.registerForm
         }
-      }
+      },
+      reset () {
+        this.$refs.form.reset()
+      },
     }
   }
 </script>

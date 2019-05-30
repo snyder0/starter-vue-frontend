@@ -10,6 +10,7 @@
       :hint="hint"
       :placeholder="placeholder"
       persistent-hint
+      @change="value => $emit('updateValue', value)"
     />
   </v-flex>
 </template>

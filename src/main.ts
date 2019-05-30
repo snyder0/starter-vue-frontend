@@ -8,11 +8,14 @@ import { mainTheme } from '@/styles/mainTheme.ts'
 
 Vue.config.productionTip = false;
 Vue.use(Vuetify, {
-    theme: mainTheme
-  })
+  theme: mainTheme
+})
 
-new Vue({
+let VueApp: any = Vue;
+
+
+let Ralloc = new VueApp({
   router,
   store,
-  render: h => h(App),
+  render: (h: (arg0: any) => void) => h(App),
 }).$mount('#app');
