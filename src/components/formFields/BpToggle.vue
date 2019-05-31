@@ -9,13 +9,14 @@
       :false-value="falseValue"
       :disabled="disabled"
       :required="required"
+      @change="value => $emit('updateValue', value)"
     />
   </v-flex>
 </template>
 
 <script lang='ts'>
 export default {
-  name: "RalSwitch",
+  name: "BpToggle",
   props: {
     label: {
       type: String,
@@ -51,13 +52,9 @@ export default {
     }
   },
   data() {
-    return {};
-  },
-  computed: {},
-  mounted() {},
-  methods: {}
+    return {
+
+    }
+  }
 };
 </script>
-
-<style>
-</style>

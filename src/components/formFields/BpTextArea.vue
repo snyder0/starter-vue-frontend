@@ -1,7 +1,7 @@
 <template>
   <v-flex>
-    <v-text-field
-      ref="textField"
+    <v-textarea
+      ref="textArea"
       :label="label"
       :hint="hint"
       :value="value"
@@ -16,10 +16,9 @@
     />
   </v-flex>
 </template>
-
 <script lang='ts'>
 export default {
-  name: 'RalTextField',
+  name: 'BpTextArea',
   props: {
     label: {
       type: String,
@@ -58,28 +57,14 @@ export default {
       default: ''
     },
     value: {
-      type: String,
+      type: [Boolean, String],
       default: ''
-    }
+    },
   },
   data () {
     return {
 
     }
-  },
-  computed: {
-
-  },
-  updated () {
-
-  },
-  mounted () {
-
-  },
-  methods: {
   }
 }
 </script>
-
-<style>
-</style>

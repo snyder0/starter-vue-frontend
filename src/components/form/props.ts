@@ -51,6 +51,14 @@ export const props = {
       type: String,
       default: ''
     },
+    color: {
+      type: String,
+      default: ''
+    },
+    type: {
+      type: String,
+      default: ''
+    },
     value: {
       type: null
     }

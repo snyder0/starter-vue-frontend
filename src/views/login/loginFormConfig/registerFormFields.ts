@@ -3,6 +3,7 @@ import { Layout } from '@/lib/types/layout.ts'
 
 const registerFormFields = [
     {
+      autofocus: true,
       key: 'firstname',
       label: 'First Name',
       placeholder: 'First name',

@@ -1,7 +1,7 @@
 import { Fields } from '@/lib/types/field.ts'
 import { Layout } from '@/lib/types/layout.ts'
 
-const testFields = [
+const organizationFields = [
   {
     key: 'name',
     label: 'Name',
@@ -25,4 +25,4 @@ const testFields = [
   },
 ]
 
-export default testFields
+export default organizationFields

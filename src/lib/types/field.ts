@@ -1,8 +1,9 @@
 export const Fields = Object.freeze({
     TEXT: 'text',
+    PASSWORD: 'password',
     TEXTAREA: 'textarea',
     SELECTLIST: 'selectlist',
-    SWITCH: 'switch',
+    TOGGLE: 'toggle',
     DATE: 'date',
     TIME: 'time',
     RADIO: 'radio'

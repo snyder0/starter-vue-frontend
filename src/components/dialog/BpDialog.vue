@@ -35,21 +35,19 @@
   </v-layout>
 </template>
 
-<script>
+<script type="ts">
 import { props } from './props.ts'
 
 export default {
-  name: 'Dialog',
+  name: 'BpDialog',
   components: {
 
   },
   props: props,
   data () {
     return {
-        
+
     }
-  },
-  computed: {
   },
   methods: {
     async click (button) {
@@ -65,6 +63,3 @@ export default {
   }
 }
 </script>
-
-<style>
-</style>

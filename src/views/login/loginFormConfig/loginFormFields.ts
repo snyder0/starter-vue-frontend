@@ -2,24 +2,24 @@ import { Fields } from '@/lib/types/field.ts'
 import { Layout } from '@/lib/types/layout.ts'
 
 const loginFormFields = [
-    {
-      key: 'email',
-      label: 'Email',
-      placeholder: 'Enter email',
-      type: Fields.TEXT,
-      layout: Layout.L12,
-      prependIcon: 'email'
-    },
-    {
-      key: 'password',
-      label: 'Password',
-      placeholder: 'Enter password',
-      type: Fields.TEXT,
-      layout: Layout.L12,
-      prependIcon: 'lock'
-    },
-  
-    {
+  {
+    autofocus: true,
+    key: 'email',
+    label: 'Email',
+    placeholder: 'Enter email',
+    type: Fields.TEXT,
+    layout: Layout.L12,
+    prependIcon: 'email'
+  },
+  {
+    key: 'password',
+    label: 'Password',
+    placeholder: 'Enter password',
+    type: Fields.PASSWORD,
+    layout: Layout.L12,
+    prependIcon: 'lock'
+  },
+  {
       key: 'date',
       type: Fields.DATE,
       layout: Layout.L6,
@@ -35,7 +35,7 @@ const loginFormFields = [
     {
       key: 'swtich',
       label: 'switch',
-      type: Fields.SWITCH,
+      type: Fields.TOGGLE,
       layout: Layout.L6,
       prependIcon: 'lock',
       color: 'primary'
@@ -47,23 +47,39 @@ const loginFormFields = [
           label: 'radio1',
           value: '10',
           layout: Layout.L12,
-          color: 'success',
+          color: 'primary',
         },
         {
           label: 'radio2',
           value: '9',
           layout: Layout.L12,
-          color: 'success',
+          color: 'primary',
         },
         {
           label: 'radio3',
           value: '5',
           layout: Layout.L12,
-          color: 'success',
+          color: 'primary',
         }
-        
+      ]
+    },
+    {
+      key: 'select-list',
+      label: 'Select List',
+      type: Fields.SELECTLIST,
+      multiple: true,
+      layout: Layout.L6,
+      items: [
+        {
+          text: 'Option 1',
+          value: 1
+        },
+        {
+          text: 'Option 2',
+          value: 2
+        }
       ]
     }
-  ]
+]
 
 export default loginFormFields

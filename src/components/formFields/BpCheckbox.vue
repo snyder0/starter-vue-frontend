@@ -15,7 +15,7 @@
 
 <script lang='ts'>
 export default {
-  name: "RalCheckbox",
+  name: "BpCheckbox",
   props: {
     label: {
       type: String,
@@ -23,7 +23,7 @@ export default {
     },
     color: {
       type: String,
-      default: "secondary",
+      default: "primary",
     },
     value: {
         type: [Boolean, String],
@@ -51,13 +51,9 @@ export default {
     }
   },
   data() {
-    return {};
-  },
-  computed: {},
-  mounted() {},
-  methods: {}
+    return {
+
+    }
+  }
 };
 </script>
-
-<style>
-</style>

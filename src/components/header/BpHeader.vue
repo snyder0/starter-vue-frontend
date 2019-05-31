@@ -4,7 +4,7 @@
       v-model="drawer"
       :clipped="clipped"
       :mini-variant="mini"
-      enable-resize-watcher
+      disable-resize-watcher
       app
       class="hidden-sm-and-up"
     >
@@ -25,7 +25,7 @@
         <v-list-tile
           v-for="item in items"
           :key="item.title"
-          @click="menuSubmit(item)"
+          @click="goToPage(item.path)"
         >
           <v-layout row>
             <v-flex xs2>
@@ -75,7 +75,6 @@
       dense 
       app
       flat
-      height="56"
     >
       <v-toolbar-side-icon 
         class="hidden-sm-and-up"
@@ -86,7 +85,7 @@
         </v-icon>
       </v-toolbar-side-icon>
       <v-toolbar-title>
-        Ralloc
+        Toolbar Title
       </v-toolbar-title>
       <v-spacer />
       <v-toolbar-items
@@ -141,11 +140,10 @@
   </div>
 </template>
 
-<script>
+<script type="ts">
 
 export default {
-  name: 'Header',
-  inject: ['takeAction'],
+  name: 'BpHeader',
   data () {
     return {
       drawer: false,
@@ -163,24 +161,10 @@ export default {
       right: null
     }
   },
-  computed: {
-    
-  },
   methods: {
-    formTesting (items) {
-      this.takeAction(items)
-    },
-    menuSubmit (item) {
-      this.$router.push(item.path)
-    },
     goToPage (path) {
       this.$router.push(path);
     }
   }
-
 }
 </script>
-
-<style>
-
-</style>

@@ -2,7 +2,7 @@
   <div />
 </template>
 
-<script>
+<script type="ts">
 export default {
   // PascalCase component name
   name: 'ComponentName',
@@ -35,5 +35,5 @@ export default {
 }
 </script>
 
-<style>
+<style lang="scss">
 </style>
