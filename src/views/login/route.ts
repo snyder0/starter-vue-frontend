@@ -2,9 +2,9 @@ import { RouteBuilder } from '@/router'
 const Router = new RouteBuilder()
 
 const routes = [{
-  path: '/home',
-  name: 'Home',
-  component: () => import('./Home.vue'),
+  path: '/',
+  name: 'Login',
+  component: () => import('./Login.vue'),
   meta: {
     // Can send meta props via route
     // props: props

@@ -31,7 +31,7 @@ const registerFormFields = [
       key: 'password',
       label: 'Password',
       placeholder: 'Enter password',
-      type: Fields.TEXT,
+      type: Fields.PASSWORD,
       layout: Layout.L12,
       prependIcon: 'lock'
     }
