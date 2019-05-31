@@ -75,7 +75,6 @@
       dense 
       app
       flat
-      height="56"
     >
       <v-toolbar-side-icon 
         class="hidden-sm-and-up"
@@ -86,7 +85,7 @@
         </v-icon>
       </v-toolbar-side-icon>
       <v-toolbar-title>
-        Ralloc
+        Toolbar Title
       </v-toolbar-title>
       <v-spacer />
       <v-toolbar-items

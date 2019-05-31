@@ -2,7 +2,7 @@ import Vue from 'vue';
 import './plugins/vuetify'
 import App from './App.vue';
 import router from './router';
-import store from './store';
+import store from '@/stores/store';
 import Vuetify from 'vuetify';
 import { mainTheme } from '@/styles/mainTheme.ts'
 
