@@ -11,13 +11,14 @@
       :width="width"
       :disabled="disabled"
       :full-width="fullWidth"
+      @change="value => $emit('updateValue', value)"
     />
   </v-flex>
 </template>
 
 <script lang='ts'>
 export default {
-  name: "RalTimePicker",
+  name: "BpTimePicker",
   props: {
     landscape: {
       type: Boolean,
@@ -37,7 +38,7 @@ export default {
     },
     color: {
       type: String,
-      default: "secondary"
+      default: ""
     },
     eventColor: {
       type: [Array, Function, Object, String],
@@ -65,13 +66,9 @@ export default {
     }
   },
   data() {
-    return {};
-  },
-  computed: {},
-  mounted() {},
-  methods: {}
+    return {
+
+    }
+  }
 };
 </script>
-
-<style>
-</style>

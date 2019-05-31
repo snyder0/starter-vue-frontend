@@ -1,7 +1,7 @@
 <template>
   <div>
     <v-card-text>
-      <ral-form
+      <bp-form
         ref="loginForm"
         :fields="loginFormFields"
       />
@@ -26,18 +26,21 @@
 </template>
 
 <script lang='ts'>
-import RalForm from '@/components/form/RalForm.vue'
+import BpForm from '@/components/form/BpForm.vue'
 import loginFormFields from '../loginFormConfig/loginFormFields'
 
   export default {
     name: 'LoginForm',
     components: {
-      RalForm
+      BpForm
     },
     data() {
       return {
         loginFormFields: loginFormFields
       }
+    },
+    mounted () {
+
     },
     methods: {
       reset () {
@@ -45,13 +48,8 @@ import loginFormFields from '../loginFormConfig/loginFormFields'
       },
       submitLogin () {
         // Login 
+        debugger
       }
     }
   }
 </script>
-
-<style lang="scss">
-    .v-icon {
-        color: $primary !important
-    }
-</style>

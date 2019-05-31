@@ -17,7 +17,7 @@
 
 <script lang='ts'>
 export default {
-  name: 'RalSelectList',
+  name: 'BpSelectList',
   props: {
     label: {
       type: String,
@@ -52,16 +52,6 @@ export default {
     return {
       e6: []
     }
-  },
-  computed: {
-
-  },
-  methods: {
-
   }
 }
 </script>
-
-<style>
-
-</style>

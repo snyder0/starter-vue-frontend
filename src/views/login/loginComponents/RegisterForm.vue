@@ -1,7 +1,7 @@
 <template>
   <div>
     <v-card-text>
-      <ral-form
+      <bp-form
         ref="registerForm"
         :fields="registerFormFields"
       />
@@ -23,13 +23,13 @@
 </template>
 
 <script lang='ts'>
-import RalForm from '@/components/form/RalForm.vue'
+import BpForm from '@/components/form/BpForm.vue'
 import registerFormFields from '../loginFormConfig/registerFormFields'
 
   export default {
     name: 'RegisterForm',
     components: {
-      RalForm
+      BpForm
     },
     data() {
       return {

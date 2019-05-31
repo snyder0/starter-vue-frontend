@@ -10,6 +10,7 @@
         :ripple="item.ripple"
         :disabled="item.disabled"
         :required="item.required"
+        @change="value => $emit('updateValue', value)"
       />
     </v-radio-group>
   </v-flex>
@@ -17,7 +18,7 @@
 
 <script lang='ts'>
 export default {
-  name: "RalRadio",
+  name: "BpRadio",
   props: {
     items: {
       type: Array,
@@ -29,7 +30,7 @@ export default {
     },
     color: {
       type: String,
-      default: "secondary",
+      default: "primary",
     },
     value: {
         type: [Boolean, String],
@@ -49,14 +50,9 @@ export default {
     }
   },
   data() {
-    return {};
-  },
-  computed: {},
-  mounted() {
-  },
-  methods: {}
+    return {
+
+    }
+  }
 };
 </script>
-
-<style>
-</style>

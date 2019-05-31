@@ -3,5 +3,6 @@ export const state = {
     lastName: '',
     email: '',
     session: {},
-    isAuthenticated: false
+    userID: null,
+    isAuthenticated: true
   }

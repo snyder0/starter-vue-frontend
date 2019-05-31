@@ -7,47 +7,50 @@
       v-for="field in fields"
       :key="field.key"
       :class="getFieldLayout(field)"
-      class="ral-form-inputs"
+      class="bp-form-inputs"
     >
-      <v-form ref="RalForm">
-        <ral-text-field 
-          v-if="ralTextFieldTypes.includes(field.type)"
+      <v-form>
+        <bp-text-field 
+          v-if="bpTextFieldTypes.includes(field.type)"
           :id="field.key"
           :ref="field.key"
           :key="field.key"
           :label="field.label"
           :hint="field.hint"
           :value="value"
-          :placeholder="placeholder"
-          :autofocus="autofocus"
-          :clearable="clearable"
-          :disabled="disabled"
-          :required="required"
+          :type="field.type"
+          :placeholder="field.placeholder"
+          :autofocus="field.autofocus"
+          :clearable="field.clearable"
+          :disabled="field.disabled"
+          :required="field.required"
           :prepend-icon="field.prependIcon"
           :append-icon="field.appendIcon"
+          :color="field.color"
           @updateValue="value => updateValue(field.key, value)"
         />
 
-        <ral-text-area 
-          v-else-if="ralTextAreaTypes.includes(field.type)"
+        <bp-text-area 
+          v-else-if="bpTextAreaTypes.includes(field.type)"
           :id="field.key"
           :ref="field.key"
           :key="field.key"
           :label="field.label"
           :hint="field.hint"
           :value="value"
-          :placeholder="placeholder"
-          :autofocus="autofocus"
-          :clearable="clearable"
-          :disabled="disabled"
-          :required="required"
+          :placeholder="field.placeholder"
+          :autofocus="field.autofocus"
+          :clearable="field.clearable"
+          :disabled="field.disabled"
+          :required="field.required"
           :prepend-icon="field.prependIcon"
           :append-icon="field.appendIcon"
+          :color="field.color"
           @updateValue="value => updateValue(field.key, value)"
         />
 
-        <ral-select-list 
-          v-else-if="ralSelectListTypes.includes(field.type)"
+        <bp-select-list 
+          v-else-if="bpSelectListTypes.includes(field.type)"
           :id="field.key"
           :ref="field.key"
           :key="field.key"
@@ -62,8 +65,8 @@
           @updateValue="value => updateValue(field.key, value)"
         />
 
-        <ral-switch
-          v-else-if="ralSwitchTypes.includes(field.type)"
+        <bp-toggle
+          v-else-if="bpToggleTypes.includes(field.type)"
           :label="field.label"
           :color="field.color"
           :ripple="field.ripple"
@@ -72,10 +75,11 @@
           :false-value="field.falseValue"
           :disabled="field.disabled"
           :required="field.required"
+          @updateValue="value => updateValue(field.key, value)"
         />
 
-        <ral-date-picker
-          v-else-if="ralDatePicker.includes(field.type)"
+        <bp-date-picker
+          v-else-if="bpDatePicker.includes(field.type)"
           :landscape="field.landscape"
           :reactive="field.reactive"
           :color="field.color"
@@ -87,10 +91,11 @@
           :show-current="field.showCurrent"
           :disabled="field.disabled"
           :full-width="field.fullWidth"
+          @updateValue="value => updateValue(field.key, value)"
         />
 
-        <ral-time-picker
-          v-else-if="ralTimePicker.includes(field.type)"
+        <bp-time-picker
+          v-else-if="bpTimePicker.includes(field.type)"
           :landscape="field.landscape"
           :color="field.color"
           :allowed-hours="field.allowedHours"
@@ -101,10 +106,11 @@
           :width="field.width"
           :disabled="field.disabled"
           :full-width="field.fullWidth"
+          @updateValue="value => updateValue(field.key, value)"
         />
 
-        <ral-radio
-          v-else-if="ralRadioTypes.includes(field.type)"
+        <bp-radio
+          v-else-if="bpRadioTypes.includes(field.type)"
           :label="field.label"
           :color="field.color"
           :value="value"
@@ -112,6 +118,7 @@
           :disabled="field.disabled"
           :required="field.required"
           :items="field.items"
+          @updateValue="value => updateValue(field.key, value)"
         />
 
         <div v-else>
@@ -122,56 +129,48 @@
   </v-layout>
 </template>
 
-<script>
+<script type="ts">
 import { Fields } from '@/lib/types/field.ts'
 import { props } from './props.ts'
-import RalTimePickerVue from '../dateTimePickers/RalTimePicker.vue';
+import BpTimePickerVue from '../formFields/BpTimePicker.vue';
 
 export default {
-  name: 'RalForm',
+  name: 'BpForm',
   components: {
-    RalTextField: () => import('@/components/formFields/RalTextField.vue'),
-    RalTextArea: () => import('@/components/formFields/RalTextArea.vue'),
-    RalSelectList: () => import('@/components/formFields/RalSelectList.vue'),
-    RalSwitch: () => import('@/components/selectionControls/RalSwitch.vue'),
-    RalDatePicker: () => import('@/components/dateTimePickers/RalDatePicker.vue'),
-    RalTimePicker: () => import('@/components/dateTimePickers/RalTimePicker.vue'),
-    RalRadio: () => import('@/components/selectionControls/RalRadio.vue')
+    BpTextField: () => import('@/components/formFields/BpTextField.vue'),
+    BpTextArea: () => import('@/components/formFields/BpTextArea.vue'),
+    BpSelectList: () => import('@/components/formFields/BpSelectList.vue'),
+    BpToggle: () => import('@/components/formFields/BpToggle.vue'),
+    BpDatePicker: () => import('@/components/formFields/BpDatePicker.vue'),
+    BpTimePicker: () => import('@/components/formFields/BpTimePicker.vue'),
+    BpRadio: () => import('@/components/formFields/BpRadio.vue')
   },
   props: props,
   data () {
     return {
-      ralTextFieldTypes: [
-        Fields.TEXT
+      bpTextFieldTypes: [
+        Fields.TEXT,
+        Fields.PASSWORD
       ],
-      ralTextAreaTypes: [
+      bpTextAreaTypes: [
         Fields.TEXTAREA
       ],
-      ralSelectListTypes: [
+      bpSelectListTypes: [
         Fields.SELECTLIST
       ],
-      ralSwitchTypes: [
-        Fields.SWITCH
+      bpToggleTypes: [
+        Fields.TOGGLE
       ],
-      ralDatePicker: [
+      bpDatePicker: [
         Fields.DATE
       ],
-      ralTimePicker: [
+      bpTimePicker: [
         Fields.TIME
       ],
-      ralRadioTypes: [
+      bpRadioTypes: [
         Fields.RADIO
       ]
     }
-  },
-  updated () {
-
-  },
-  mounted () {
-
-  },
-  updated () {
-
   },
   methods: {
     getFieldLayout (field) {
@@ -192,7 +191,7 @@ export default {
 </script>
 
 <style>
-  .ral-form-inputs {
+  .bp-form-inputs {
     padding: 0 .5rem;
   }
 </style>

@@ -6,7 +6,7 @@ const mutations = {
       data.email = payload.email
       data.session = payload.session
       data.userID = payload._id
-      data.loggedIn = true
+      data.isAuthenticated = true
     },
     clearUserStore (data: any) {
       // State mutations
@@ -15,7 +15,7 @@ const mutations = {
       data.email = ''
       data.session = {}
       data.userID = null
-      data.loggedIn = false
+      data.isAuthenticated = false
     }
   }
   

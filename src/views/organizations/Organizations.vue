@@ -9,7 +9,9 @@
         @click="addOrganization"
       >
         Create
-        <v-icon>add</v-icon>
+        <v-icon color="white">
+          add
+        </v-icon>
       </v-btn>
     </v-layout>
     <v-layout
@@ -39,7 +41,6 @@
               <template v-for="(item, index) in items">
                 <v-list-tile
                   :key="item.title"
-                  @click=""
                 >
                   <v-list-tile-content>
                     <v-list-tile-title>
@@ -66,7 +67,7 @@
 
         
         <!-- FORM AND DIALOG -->
-        <ral-dialog
+        <bp-dialog
           ref="organizationsDialog"
           v-bind="addForm.dialog.props"
           @close="addForm.dialog.props.show = false"
@@ -74,28 +75,28 @@
           <div 
             slot="content"
           >
-            <ral-form
+            <bp-form
               ref="organizationsForm"
               :fields="addForm.form.props.fields"
               :data="addForm.form.props.data"
             />
           </div>
-        </ral-dialog>
+        </bp-dialog>
       </v-flex>
     </v-layout>
   </v-container>
 </template>
 
 <script>
-import RalDialog from '@/components/dialog/RalDialog.vue'
-import RalForm from '@/components/form/RalForm.vue'
-import addOrganizationsFields from '@/lib/addOrganizationsProps'
+import BpDialog from '@/components/dialog/BpDialog.vue'
+import BpForm from '@/components/form/BpForm.vue'
+import addOrganizationsFields from './addOrganizationsProps'
 
 export default {
   name: "Organization",
   components: {
-    RalDialog,
-    RalForm,
+    BpDialog,
+    BpForm,
   },
   data() {
     return {

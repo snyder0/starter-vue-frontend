@@ -1,5 +1,5 @@
 const getters = {
-    isAuthenticated: state => {
+    isAuthenticated: (state :any) => {
         return state.isAuthenticated
     }
 }

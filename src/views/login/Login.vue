@@ -36,10 +36,8 @@
 </template>
 
 <script lang='ts'>
-//  This is a change
 import LoginForm from './loginComponents/LoginForm.vue'
 import RegisterForm from './loginComponents/RegisterForm.vue'
-import RegisterFormVue from './loginComponents/RegisterForm.vue';
   export default {
     name: 'Login',
     components: {

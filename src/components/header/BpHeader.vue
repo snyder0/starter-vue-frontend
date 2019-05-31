@@ -25,7 +25,7 @@
         <v-list-tile
           v-for="item in items"
           :key="item.title"
-          @click="menuSubmit(item)"
+          @click="goToPage(item.path)"
         >
           <v-layout row>
             <v-flex xs2>
@@ -140,11 +140,10 @@
   </div>
 </template>
 
-<script>
+<script type="ts">
 
 export default {
-  name: 'Header',
-  inject: ['takeAction'],
+  name: 'BpHeader',
   data () {
     return {
       drawer: false,
@@ -162,24 +161,10 @@ export default {
       right: null
     }
   },
-  computed: {
-    
-  },
   methods: {
-    formTesting (items) {
-      this.takeAction(items)
-    },
-    menuSubmit (item) {
-      this.$router.push(item.path)
-    },
     goToPage (path) {
       this.$router.push(path);
     }
   }
-
 }
 </script>
-
-<style>
-
-</style>

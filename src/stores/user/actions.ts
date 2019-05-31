@@ -1,17 +1,15 @@
-'use strict'
-
 const actions = {
-  updateUserStore ({commit, state}, data) {
+  updateUserStore ({commit, state} :any, data: any) {
     commit('updateUserStore', {
       firstName: data.firstName,
       lastName: data.lastName,
       email: data.email,
       session: {},
       userID: data.userID,
-      loggedIn: true
+      isAuthenticated: true
     })
   },
-  clearUserStore ({commit, state}, data) {
+  clearUserStore ({commit, state} :any, data: any) {
     // Will re-work this to tie in with mutations
     commit('clearUserStore', {
       firstName: '',
@@ -19,7 +17,7 @@ const actions = {
       email: '',
       session: {},
       userID: '',
-      loggedIn: false
+      isAuthenticated: false
     })
   }
 }

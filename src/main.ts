@@ -13,7 +13,7 @@ Vue.use(Vuetify, {
 
 let VueApp: any = Vue;
 
-let Ralloc = new VueApp({
+let Bploc = new VueApp({
   router,
   store,
   render: (h: (arg0: any) => void) => h(App),
