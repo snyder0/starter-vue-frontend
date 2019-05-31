@@ -11,23 +11,6 @@
         <router-view />
       </v-container>
     </v-content>
-
-    <!-- FORM AND DIALOG -->
-    <ral-dialog
-      ref="homeDialog"
-      v-bind="testingForm.dialog.props"
-      @close="testingForm.dialog.props.show = false"
-    >
-      <div 
-        slot="content"
-      >
-        <ral-form
-          ref="homeForm"
-          :fields="testingForm.form.props.fields"
-          :data="testingForm.form.props.data"
-        />
-      </div>
-    </ral-dialog>
   </v-app>
 </template>
 
@@ -48,73 +31,19 @@ export default {
   },
   provide () {
     return {
-      takeAction: this.takeAction
+
     }
   },
   data () {
     return {
-      testingForm: {
-        form: {
-          props: {
-            fields: testFields,
-            data: {}
-          },
-        },
-        dialog: {
-          props: {
-            show: false,
-            title: 'This is my form within a dialog',
-            showCloseButton: true,
-            closeButtonLabel: 'cancel',
-            buttons: [
-              {
-                label: 'Save',
-                data: {},
-                callback: this.testingFormSave
-              }
-            ]
-          }
-        }
-      }
+
     }
   },
   computed: {
     ...mapGetters(['isAuthenticated'])
   },
-  mounted () {
-
-  },
   methods: {
-    takeAction () {
-      // Set form fields and data from props
-      this.$set(this.testingForm.form.props, 'fields', testFields)
-      this.$set(this.testingForm.form.props, 'data', {})
-      this.testingForm.dialog.props.show = true
-    },
-    async testingFormSave (data) {
-      let success = false
-      try {
-        //const OrganizationService = ServiceFactory.get('organization')
 
-        //const response = await OrganizationService.get()
-        response = true;
-
-        if (response) {
-          success = true
-        }
-      } catch (e) {
-        success = false
-      }
-      return { close: success }
-    },
-    async testingFormClose (data) {
-      return { close: false }
-    }
   }
 }
 </script>
-
-.v-icon {
-    color: var(--v-primary-base)
-    background-color: var(--v-accent-lighten2)
-  }
