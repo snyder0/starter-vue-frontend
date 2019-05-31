@@ -4,7 +4,7 @@
       v-model="drawer"
       :clipped="clipped"
       :mini-variant="mini"
-      enable-resize-watcher
+      disable-resize-watcher
       app
       class="hidden-sm-and-up"
     >

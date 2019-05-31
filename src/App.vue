@@ -37,6 +37,7 @@ import RalDialog from '@/components/dialog/RalDialog.vue'
 import RalForm from '@/components/form/RalForm.vue'
 import testFields from '@/lib/testProps.ts'
 import { ServiceFactory } from '@/services/serviceFactory'
+import { mapGetters } from 'vuex'
 
 export default {
   name: 'App',
@@ -76,6 +77,12 @@ export default {
         }
       }
     }
+  },
+  computed: {
+    ...mapGetters(['isAuthenticated'])
+  },
+  mounted () {
+
   },
   methods: {
     takeAction () {
