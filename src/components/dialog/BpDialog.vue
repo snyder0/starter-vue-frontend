@@ -36,7 +36,7 @@
 </template>
 
 <script type="ts">
-import { props } from './props.ts'
+import { props } from './props'
 
 export default {
   name: 'BpDialog',

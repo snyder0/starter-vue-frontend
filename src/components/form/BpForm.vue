@@ -1,15 +1,15 @@
 <template>
-  <v-layout 
-    row 
-    wrap
-  >
-    <v-flex
-      v-for="field in fields"
-      :key="field.key"
-      :class="getFieldLayout(field)"
-      class="bp-form-inputs"
+  <v-form ref="form">
+    <v-layout 
+      row 
+      wrap
     >
-      <v-form>
+      <v-flex
+        v-for="field in fields"
+        :key="field.key"
+        :class="getFieldLayout(field)"
+        class="bp-form-inputs"
+      >
         <bp-text-field 
           v-if="bpTextFieldTypes.includes(field.type)"
           :id="field.key"
@@ -124,15 +124,15 @@
         <div v-else>
           Unsupported field type: {{ field.type }}
         </div>
-      </v-form>
-    </v-flex>
-  </v-layout>
+      </v-flex>
+    </v-layout>
+  </v-form>
 </template>
 
 <script type="ts">
 import { Fields } from '@/lib/types/field.ts'
-import { props } from './props.ts'
-import BpTimePickerVue from '../formFields/BpTimePicker.vue';
+import { props } from './props'
+import BpTimePickerVue from '../formFields/BpTimePicker.vue'
 
 export default {
   name: 'BpForm',
@@ -173,6 +173,9 @@ export default {
     }
   },
   methods: {
+    reset () {
+      this.$refs.form.reset()
+    },
     getFieldLayout (field) {
       return field.layout
     },
