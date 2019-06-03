@@ -35,7 +35,7 @@
   </v-layout>
 </template>
 
-<script type="ts">
+<script lang="ts">
 import { props } from './props'
 
 export default {
@@ -50,7 +50,7 @@ export default {
     }
   },
   methods: {
-    async click (button) {
+    async click (button: any) {
       const response = await button.callback(button.data)
 
       if (response.close) {

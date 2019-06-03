@@ -129,7 +129,7 @@
   </v-form>
 </template>
 
-<script type="ts">
+<script lang="ts">
 import { Fields } from '@/lib/types/field.ts'
 import { props } from './props'
 import BpTimePickerVue from '../formFields/BpTimePicker.vue'

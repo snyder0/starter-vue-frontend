@@ -14,7 +14,7 @@
   </v-app>
 </template>
 
-<script type="ts">
+<script lang="ts">
 import BpHeader from '@/components/header/BpHeader.vue'
 import BpDialog from '@/components/dialog/BpDialog.vue'
 import BpForm from '@/components/form/BpForm.vue'

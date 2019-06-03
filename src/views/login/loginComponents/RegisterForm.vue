@@ -22,7 +22,7 @@
   </div>
 </template>
 
-<script lang='ts'>
+<script lang="ts">
 import BpForm from '@/components/form/BpForm.vue'
 import registerFormFields from '../loginFormConfig/registerFormFields'
 

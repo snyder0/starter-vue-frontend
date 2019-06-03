@@ -26,6 +26,7 @@
 </template>
 
 <script type='ts'>
+
 import BpForm from '@/components/form/BpForm.vue'
 import loginFormFields from '../loginFormConfig/loginFormFields'
 
@@ -65,6 +66,7 @@ import loginFormFields from '../loginFormConfig/loginFormFields'
       } catch (e) {
         console.log(e)
       }
+
       }
     }
   }

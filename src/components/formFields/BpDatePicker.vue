@@ -17,7 +17,7 @@
   </v-flex>
 </template>
 
-<script lang='ts'>
+<script lang="ts">
 export default {
   name: "BpDatePicker",
   props: {

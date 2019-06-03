@@ -2,7 +2,7 @@
   <div />
 </template>
 
-<script type="ts">
+<script lang="ts">
 export default {
   // PascalCase component name
   name: 'ComponentName',

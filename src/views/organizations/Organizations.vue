@@ -83,7 +83,7 @@
   </v-container>
 </template>
 
-<script type="ts">
+<script lang="ts">
 import BpDialog from '@/components/dialog/BpDialog.vue'
 import BpForm from '@/components/form/BpForm.vue'
 import createOrganizationFields from './organizationFormConfig/createOrganizationFields'
