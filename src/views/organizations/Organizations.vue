@@ -1,39 +1,35 @@
 <template>
   <v-container fluid>
     <v-layout
-      align-start
-      justify-end
-    >
-      <v-btn
-        color="primary"
-        @click="addOrganization"
-      >
-        Create
-        <v-icon color="white">
-          add
-        </v-icon>
-      </v-btn>
-    </v-layout>
-    <v-layout
       align-center
       justify-center
       row
     >
       <v-flex
-        s12
+        xs6
       >
-        <div class="oragnizations">
+        <div>
           <v-card>
-            <v-toolbar flat>
+            <v-toolbar
+              dense
+              flat
+            >
               <v-toolbar-title class="text-xs-center">
-                Oragnizations
+                Organizations
               </v-toolbar-title>
-
               <v-spacer />
-
-              <v-btn icon>
-                <v-icon>search</v-icon>
-              </v-btn>
+              <v-toolbar-items class="hidden-sm-and-down">
+                <v-btn
+                  flat
+                  color="primary"
+                  @click="addOrganization"
+                >
+                  Create
+                  <v-icon color="primary">
+                    add
+                  </v-icon>
+                </v-btn>
+              </v-toolbar-items>
             </v-toolbar>
 
             <v-list subheader>
@@ -87,10 +83,10 @@
   </v-container>
 </template>
 
-<script>
+<script lang="ts">
 import BpDialog from '@/components/dialog/BpDialog.vue'
 import BpForm from '@/components/form/BpForm.vue'
-import addOrganizationsFields from './addOrganizationsProps'
+import createOrganizationFields from './organizationFormConfig/createOrganizationFields'
 
 export default {
   name: "Organization",
@@ -119,8 +115,8 @@ export default {
       addForm: {
         form: {
           props: {
-            fields: addOrganizationsFields,
-            data: {}
+            fields: createOrganizationFields,
+            data: {test: 'here'}
           },
         },
         dialog: {
@@ -132,7 +128,6 @@ export default {
             buttons: [
               {
                 label: 'Submit',
-                data: {},
                 callback: this.organizationFormSave
               }
             ]
@@ -146,23 +141,22 @@ export default {
   },
   methods: {
     addOrganization () {
-      this.$set(this.addForm.form.props, 'fields', addOrganizationsFields)
-      this.$set(this.addForm.form.props, 'data', {})
+      this.$refs.organizationsForm.reset()
       this.addForm.dialog.props.show = true
     },
-    async organizationFormSave (data) {
-      //debugger
+    async organizationFormSave () {
       let payload = {}
+
       this.addForm.form.props.fields.forEach((field) => {
         payload[field.key] = field.value
       })
-      console.log(payload)
+
       let success = false
       try {
         //const OrganizationService = ServiceFactory.get('organization')
 
         //const response = await OrganizationService.get()
-        let response = true
+        let response = false
 
         if (response) {
           success = true

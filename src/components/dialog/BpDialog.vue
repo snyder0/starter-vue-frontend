@@ -35,8 +35,8 @@
   </v-layout>
 </template>
 
-<script type="ts">
-import { props } from './props.ts'
+<script lang="ts">
+import { props } from './props'
 
 export default {
   name: 'BpDialog',
@@ -50,7 +50,7 @@ export default {
     }
   },
   methods: {
-    async click (button) {
+    async click (button: any) {
       const response = await button.callback(button.data)
 
       if (response.close) {

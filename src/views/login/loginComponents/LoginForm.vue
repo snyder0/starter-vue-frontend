@@ -25,7 +25,8 @@
   </div>
 </template>
 
-<script lang='ts'>
+<script type='ts'>
+
 import BpForm from '@/components/form/BpForm.vue'
 import loginFormFields from '../loginFormConfig/loginFormFields'
 
@@ -46,9 +47,26 @@ import loginFormFields from '../loginFormConfig/loginFormFields'
       reset () {
         this.$refs.loginForm.reset()
       },
-      submitLogin () {
-        // Login 
-        debugger
+      async submitLogin () {
+        let payload = {}
+        this.loginFormFields.forEach((field) => {
+          payload[field.key] = field.value
+        })
+        console.log(payload)
+
+        try {
+        //const OrganizationService = ServiceFactory.get('organization')
+
+        //const response = await OrganizationService.get()
+        let response = false
+
+        if (response) {
+          success = true
+        }
+      } catch (e) {
+        console.log(e)
+      }
+
       }
     }
   }

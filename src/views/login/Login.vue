@@ -35,7 +35,7 @@
   </v-layout>
 </template>
 
-<script lang='ts'>
+<script lang="ts">
 import LoginForm from './loginComponents/LoginForm.vue'
 import RegisterForm from './loginComponents/RegisterForm.vue'
   export default {

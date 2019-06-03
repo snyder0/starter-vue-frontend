@@ -13,7 +13,7 @@
   </v-flex>
 </template>
 
-<script lang='ts'>
+<script lang="ts">
 export default {
   name: "BpCheckbox",
   props: {
