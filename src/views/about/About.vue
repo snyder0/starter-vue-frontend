@@ -1,25 +1,21 @@
 <template>
-  <v-container
-    fluid
+  <div
+    v-if="isVisible"
   >
-    <v-layout
-      align-center
-      justify-center
-    >
-      <div
-        class="about"
-      >
-        This is the about page
-      </div>
-    </v-layout>
-  </v-container>
+    This is the about page
+    <v-btn @Click="onClose">
+      Hide
+    </v-btn>
+  </div>
 </template>
 
 <script lang="ts">
   export default {
     name: 'About',
-    components: {
-      
+    props: {
+      isVisible: {
+        type: Boolean
+      }
     }
   }
 </script>
